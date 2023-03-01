@@ -38,7 +38,7 @@
 #Massbalans över bränsle/luft
 #(2.587*3.35*bränsle + 2.587*bränsle)*1.2 +bränsle -(90 +0.02*bränsle)
 #bränsle = 6.21kg/s
-#Luft = (2.587*3.35*bränsle + 2.587*bränsle)*1.2 = 83.9
+#Luft = (2.587*3.35*bränsle + 2.587*bränsle)*1.2 = 83.9kg/s
 
 #Energibalans över boiler
 #Qin = 31*6.21
@@ -55,7 +55,7 @@
 # Q =w*cp*dTluft=90kg/s*1027J/kg/K*132K=12200760 watt
 # A = Q/(k*dTL)=2003 m2, *6000kr/år = 12Mkr/år
 
-h1 =3390 #Vapour 500C 90Bar 
+h1 = 3390 #Vapour 500C 90Bar 
 h2 = 2234 #Vapour/Liquid mix 0.05bar 33C
 h3 = 1112 #Gas 90kg/s 830C 12bar
 h4 = 361 #1bar 314grader
@@ -73,7 +73,12 @@ h15 = 675# samma bara högre tryck
 h16 = 990 #230C hl
 h17 = 199 #Uträknat MHA VVX
 hluft = 262 #262grader tryck=12bar
-"""
+
+#W för avgaser: h3-h4 = 751*90 = 67590(kW) 
+#Vinst för avgaser: Arbetet*600(kr)/3600 = 11kr/h = 100k/år
+#W för ångturbin
+
+
 
 
 
