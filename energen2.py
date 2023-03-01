@@ -29,8 +29,8 @@ x = 49.6 #vatten
 
 h1 =3390 #Vapour 500C 90Bar 
 h2 = 2234 #Vapour/Liquid mix 0.05bar 33C
-h3 = 1112 #Gas 90kg/s 830C
-h4 = None #Fel änsålänge
+h3 = 1112 #Gas 90kg/s 830C 12bar
+h4 = 361 #1bar 314grader
 h5 = 138 #hl vatten 33C
 h6 = 138 #hl vatten 33C
 h7 = 2574 #1 bar 100C
@@ -44,7 +44,7 @@ h14 = 675 #160grader
 h15 = 675# samma bara högre tryck
 h16 = 990 #230C hl
 h17 = 
-hluft = 262 #262grader
+hluft = 262 #262grader tryck=12bar
 
 
 
