@@ -16,13 +16,13 @@
 #de avgaser vi får ut. Vi vet att luften är 1.2 gånger så mycket som bränslet och att vi får ut
 
 #Skapa Vatten
-#0.02 Syre är kompenserat *0.5 för 1:2 förhållande till Vatten. 
 #16/1.008 är för att kompensera för att det är 16g/mol O och 1.008g/mol H
 #H2 + 0.5O2 = H2O
 #H = 0.04 *bränsle
-#O = 0.02 *bränsle * 16/1.008 = 0.317*bränsle 
+#O = 0.04*0.5 *bränsle * 16/1.008 = 0.317*bränsle 
 
 #Skapande av CO2
+#16/1.008 är för att kompensera för att det är 16g/mol O och 12g/mol C
 #C + O2 = CO2
 #O = 0.85*bränsle*2*16/12* = 2.27 * bränsle
 
@@ -37,15 +37,14 @@
 
 #Massbalans över bränsle/luft
 #(2.587*3.35*bränsle + 2.587*bränsle)*1.2 +bränsle -(90 +0.02*bränsle)
-#bränsle = 6.21
+#bränsle = 6.21kg/s
 #Luft = (2.587*3.35*bränsle + 2.587*bränsle)*1.2 = 83.9
 
 #Energibalans över boiler
 #Qin = 31*6.21
 #Qin       +h16*mvatten    +hluft*mluft  -(havgas*mavgas +  h1*mvatten+förluster)
 #192.5*10^6+990*10^3*vatten+262*10^3*83.9-(1112*90*10^3+3390*10^3*ånga+2*10^6)=0
-
-#Vatten/ångflöde = 46.3
+#Vatten/ångflöde = 46.3kg/s
 
 #Räkna på VVX matarvattenförvärmning
 #IN=UT
