@@ -40,11 +40,15 @@
 #bränsle = 6.21
 #Luft = (2.587*3.35*bränsle + 2.587*bränsle)*1.2 = 83.9
 
+#Energibalans över boiler
 #Qin = 31*6.21
-# Qin       +  h16*mvatten + hluft*mluft - (havgas*mavgas + h1*mvatten)
+# Qin    +  h16*mvatten    +hluft*mluft  -(havgas*mavgas +  h1*mvatten+förluster)
 #192.5*10^6+990*10^3*vatten+262*10^3*83.9-(1112*90*10^3+3390*10^3*ånga+2*10^6)=0
 
 #Vatten/ångflöde = 46.3
+
+#Räkna på VVX matarvattenförvärmning
+#
 
 
 
