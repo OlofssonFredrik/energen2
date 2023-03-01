@@ -49,12 +49,11 @@
 
 #Räkna på VVX matarvattenförvärmning
 #IN=UT
-
-#h4*avgaser+h15*Vatten/ångflöde=h16*Vatten/ångflöde+h17*w17
+#h4*avgaser+h15*Vatten/ångflöde=h16*Vatten/ångflöde+h17*avgaser
 #h17=199 kJ/kg
 #h17/cp(200C)=199kJ/1027J/K=194C
 # dTL=(dT1-dT2)/ln(dT1/dT2), dT1=154C dT2=36C, dTL=81.2
-# Q =w*cp*dTluft=90kg/s*1027J/kg/K*132K=12200760
+# Q =w*cp*dTluft=90kg/s*1027J/kg/K*132K=12200760 watt
 # A = Q/(k*dTL)=2003 m2, *6000kr/år = 12Mkr/år
 
 h1 =3390 #Vapour 500C 90Bar 
