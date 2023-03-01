@@ -1,6 +1,6 @@
  
 #Energibalans: In = UT
-#Qin + matarvatten + luft = avgaser + ånga + aska
+#Qin + matarvatten + luft = avgaser + ånga + aska + förluster
 #NOTE: Alla flöden kg/s
 
 #Vi vet att avgaserna än 90kg men vi vet inte Qin och vi måste beräkan det genom
@@ -32,7 +32,7 @@
 #För varje kg syre behöver vi 3.35 kg kväve
 #Tot syre: 2.27+0.317=2.587*bränsle
 #Tot kväve = 2.587*bränsle*3.35
-#Tot luft = 1.2*(2.587*bränsle*3.35 + 0.317*bränsle) #Kompenserat för överskott
+#Tot luft = 1.2*(2.587*bränsle*3.35 + 2.587*bränsle) #Kompenserat för överskott
 
 
 #Massbalans över bränsle/luft
@@ -48,9 +48,14 @@
 #Vatten/ångflöde = 46.3
 
 #Räkna på VVX matarvattenförvärmning
+#IN=UT
 
-
-
+#h4*avgaser+h15*Vatten/ångflöde=h16*Vatten/ångflöde+h17*w17
+#h17=199 kJ/kg
+#h17/cp(200C)=199kJ/1027J/K=194C
+# dTL=(dT1-dT2)/ln(dT1/dT2), dT1=154C dT2=36C, dTL=81.2
+# Q =w*cp*dTluft=90kg/s*1027J/kg/K*132K=12200760
+# A = Q/(k*dTL)=2003 m2, *6000kr/år = 12Mkr/år
 
 h1 =3390 #Vapour 500C 90Bar 
 h2 = 2234 #Vapour/Liquid mix 0.05bar 33C
@@ -68,7 +73,7 @@ h13 = 419 #100 grader hl
 h14 = 675 #160grader
 h15 = 675# samma bara högre tryck
 h16 = 990 #230C hl
-h17 = 
+h17 = 199 #Uträknat MHA VVX
 hluft = 262 #262grader tryck=12bar
 """
 
