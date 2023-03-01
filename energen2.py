@@ -1,30 +1,51 @@
  
+#Energibalans: In = UT
+#Qin + matarvatten + luft = avgaser + ånga + aska
+#NOTE: Alla flöden kg/s
+
+#Vi vet att avgaserna än 90kg men vi vet inte Qin och vi måste beräkan det genom
+#att beräkna bränslet vi stoppar in gånger entaplin den har.
+
+#F = 0.02 Vatten
+#A = 0.04 Aska
+#Hvap = 2.5MJ/kg
+#Hcal = 34 Approximera för Carbon
+#Hi = (1-F)(1-A)*Hcal - Hvap((1-5F)*8.94*H+F) = 31MJ/kg
+
+#För att beräkna mängen bränsle behöver vi beräkna hur mycket luft vi behöver som är en del av
+#de avgaser vi får ut. Vi vet att luften är 1.2 gånger så mycket som bränslet och att vi får ut
 
 #Skapa Vatten
+#0.02 Syre är kompenserat *0.5 för 1:2 förhållande till Vatten. 
+#16/1.008 är för att kompensera för att det är 16g/mol O och 1.008g/mol H
+#H2 + 0.5O2 = H2O
 #H = 0.04 *bränsle
-#O = 0.02 *bränsle * 16/1.008 = 0.317*bränsle
+#O = 0.02 *bränsle * 16/1.008 = 0.317*bränsle 
 
-#Lägg till skapande av CO2 till Vatten
-#N = 0.77% kg / luft
-#O = 0.23% kg / luft
-#N = = O*3.35 = 0.317*3.35*bränsle
+#Skapande av CO2
+#C + O2 = CO2
+#O = 0.85*bränsle*2*16/12* = 2.27 * bränsle
 
-#Luft: N + O = 0.317*3.35*bränsle + 0.317*bränsle 
-#Luftöverskott = 1.2 * luft
-
-#x = bränsle
-#(0.317*3.35*x + 0.317*x)*1.2 +x -(90 +0.04*x+0.36*x +0.02*x) = 0
-#IN = UT
-#IN = 6.39(ALLT BRÄNSLE) + 86.3(ALL LUFT) + Matarvatten
-#UT = 90(Avgaser) + Ånga
-
-#x = 6.39
-#luftöverskott = 1.2*(0.317*3.35*x + 0.317*x) = 86.3
+#Vi väljer att räkna i kilogram istället för volym% för att det är enklare
+#N = 0.77 kg / kg luft
+#O = 0.23 kg / kg luft
+#För varje kg syre behöver vi 3.35 kg kväve
+#Tot syre: 2.27+0.317=2.587*bränsle
+#Tot kväve = 2.587*bränsle*3.35
+#Tot luft = 1.2*(2.587*bränsle*3.35 + 0.317*bränsle) #Kompenserat för överskott
 
 
+#Massbalans över bränsle/luft
+#(2.587*3.35*bränsle + 2.587*bränsle)*1.2 +bränsle -(90 +0.02*bränsle)
+#bränsle = 6.21
+#Luft = (2.587*3.35*bränsle + 2.587*bränsle)*1.2 = 83.9
+
+#Qin = 31*6.21
 # Qin       +  h16*m + hluft*mluft - (havgas*mavgas + h1*m+   
-#198.5*10^6+990*10^3*x+262*10^3*86.3-(1112*90*10^3+3390*10^3*x+2*10^6)=0
-x = 49.6 #vatten
+#192.5*10^6+990*10^3*vatten+262*10^3*83.9-(1112*90*10^3+3390*10^3*ånga+2*10^6)=0
+
+#Vatten/ångflöde = 46.3
+
 
 
 h1 =3390 #Vapour 500C 90Bar 
@@ -45,7 +66,7 @@ h15 = 675# samma bara högre tryck
 h16 = 990 #230C hl
 h17 = 
 hluft = 262 #262grader tryck=12bar
-
+"""
 
 
 
